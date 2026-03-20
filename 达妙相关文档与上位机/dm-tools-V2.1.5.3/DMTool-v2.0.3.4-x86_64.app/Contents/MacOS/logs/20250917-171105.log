@@ -1,0 +1,46 @@
+[2025-09-17 17:11:05.294] [INFO] [线程ID: 0x10a8f0600] [Logger::init] 日志系统初始化完成
+[2025-09-17 17:11:05.294] [INFO] [线程ID: 0x10a8f0600] [Logger::init] 日志文件路径: /Users/mac/code/serial-port-assistant/build/Qt_6_5_10_for_macOS-Release/DMTool-v2.0.3.4-x86_64.app/Contents/MacOS/logs/20250917-171105.log
+[2025-09-17 17:11:05.912] [ERROR] [线程ID: 0x10a8f0600] [DMChat] 错误: 无法启动Python进程!
+[2025-09-17 17:11:05.912] [ERROR] [线程ID: 0x10a8f0600] [DMChat] 错误信息: execvp: No such file or directory
+[2025-09-17 17:11:05.921] [INFO] [线程ID: 0x700003889000] [run] RX接收线程启动
+[2025-09-17 17:11:05.921] [INFO] [线程ID: 0x700003806000] [run] can解析线程启动
+[2025-09-17 17:11:05.921] [INFO] [线程ID: 0x700003a12000] [operator()] handleFIFO Background task started. Thread ID: 123145363202048
+[2025-09-17 17:11:05.921] [INFO] [线程ID: 0x700003a95000] [operator()] handleCANAnalysis Background task started. Thread ID: 123145363738624
+[2025-09-17 17:11:05.921] [INFO] [线程ID: 0x70000398f000] [run] TX接收线程启动
+[2025-09-17 17:11:05.921] [INFO] [线程ID: 0x700003b18000] [operator()] CalFIFOfuture Background task started. Thread ID: 123145364275200
+[2025-09-17 17:11:13.452] [INFO] [线程ID: 0x700003e2a000] [operator()] handleRecData Background task started. Thread ID: 123145367494656
+[2025-09-17 17:11:29.926] [INFO] [线程ID: 0x700003f30000] [fdcanFrameSendTimes] (Hex): 00 00 00 00
+[2025-09-17 17:11:29.926] [INFO] [线程ID: 0x700003fb3000] [operator()] WaveUpdatefuture Background task started. Thread ID: 123145369104384
+[2025-09-17 17:11:32.557] [INFO] [线程ID: 0x700003fb3000] [operator()] WaveUpdatefuture Thread 123145369104384 finished.
+[2025-09-17 17:11:35.495] [INFO] [线程ID: 0x700003f30000] [fdcanFrameSendTimes] (Hex): 00 00 00 00
+[2025-09-17 17:11:35.495] [INFO] [线程ID: 0x700003fb3000] [operator()] WaveUpdatefuture Background task started. Thread ID: 123145369104384
+[2025-09-17 17:11:37.006] [INFO] [线程ID: 0x700003fb3000] [operator()] WaveUpdatefuture Thread 123145369104384 finished.
+[2025-09-17 17:12:01.917] [INFO] [线程ID: 0x700003fb3000] [fdcanFrameSendTimes] (Hex): 00 00 00 00
+[2025-09-17 17:12:01.917] [INFO] [线程ID: 0x700003f30000] [operator()] WaveUpdatefuture Background task started. Thread ID: 123145368567808
+[2025-09-17 17:12:03.137] [INFO] [线程ID: 0x700003f30000] [operator()] WaveUpdatefuture Thread 123145368567808 finished.
+[2025-09-17 17:12:07.618] [INFO] [线程ID: 0x700003fb3000] [fdcanFrameSendTimes] (Hex): 00 00 00 00
+[2025-09-17 17:12:07.618] [INFO] [线程ID: 0x700003f30000] [operator()] WaveUpdatefuture Background task started. Thread ID: 123145368567808
+[2025-09-17 17:12:12.982] [INFO] [线程ID: 0x700003d24000] [fdcanFrameSendTimes] (Hex): 00 00 80 3F
+[2025-09-17 17:12:14.640] [INFO] [线程ID: 0x700003fb3000] [fdcanFrameSendTimes] (Hex): 00 00 80 3F
+[2025-09-17 17:12:17.777] [INFO] [线程ID: 0x700003fb3000] [fdcanFrameSendTimes] (Hex): 00 00 80 3F
+[2025-09-17 17:12:21.694] [INFO] [线程ID: 0x700003fb3000] [fdcanFrameSendTimes] (Hex): 00 00 80 3F
+[2025-09-17 17:12:23.675] [INFO] [线程ID: 0x700003b9b000] [fdcanFrameSendTimes] (Hex): 00 00 80 3F
+[2025-09-17 17:12:24.963] [INFO] [线程ID: 0x700003d24000] [fdcanFrameSendTimes] (Hex): 00 00 80 3F
+[2025-09-17 17:13:18.968] [INFO] [线程ID: 0x700003f30000] [operator()] WaveUpdatefuture Thread 123145368567808 finished.
+[2025-09-17 17:13:20.900] [INFO] [线程ID: 0x700003e2a000] [operator()] handleRecData Thread 123145367494656 finished.
+[2025-09-17 17:13:23.305] [INFO] [线程ID: 0x700003b9b000] [operator()] handleRecData Background task started. Thread ID: 123145364811776
+[2025-09-17 17:13:26.137] [ERROR] [线程ID: 0x700003889000] [run] 发送CAN指令失败: LIBUSB_ERROR_OTHER                                                                                  (%2)
+[2025-09-17 17:13:26.137] [ERROR] [线程ID: 0x70000398f000] [run] 发送CAN指令失败: LIBUSB_ERROR_OTHER                                                                                  (%2)
+[2025-09-17 17:13:26.137] [INFO] [线程ID: 0x10a8f0600] [operator()] USB错误：处理UI线程开始
+[2025-09-17 17:13:26.137] [ERROR] [线程ID: 0x10a8f0600] [usb_control_send] libusb_clear_halt failed:[Other error]
+[2025-09-17 17:13:26.137] [ERROR] [线程ID: 0x10a8f0600] [usb_control_ack] usb_control_ack receive failed:[Other error]
+[2025-09-17 17:13:26.138] [ERROR] [线程ID: 0x10a8f0600] [usb_contorl_transfer] ACK FAIL
+[2025-09-17 17:13:26.347] [INFO] [线程ID: 0x700003b9b000] [operator()] handleRecData Thread 123145364811776 finished.
+[2025-09-17 17:13:26.347] [INFO] [线程ID: 0x10a8f0600] [operator()] USB错误：处理UI线程结束
+[2025-09-17 17:13:47.343] [INFO] [线程ID: 0x10a8f0600] [~MainWindow] RX接收线程已经终止
+[2025-09-17 17:13:47.343] [INFO] [线程ID: 0x10a8f0600] [~MainWindow] TX接收线程已经终止
+[2025-09-17 17:13:47.345] [INFO] [线程ID: 0x10a8f0600] [~MainWindow] CAN解析线程已经终止
+[2025-09-17 17:13:47.352] [INFO] [线程ID: 0x700003a95000] [operator()] handleCANAnalysis Thread 123145363738624 finished.
+[2025-09-17 17:13:47.357] [INFO] [线程ID: 0x700003a12000] [operator()] handleFIFO Thread 123145363202048 finished.
+[2025-09-17 17:13:47.357] [INFO] [线程ID: 0x10a8f0600] [~CustomCDC] tx线程已经终止
+[2025-09-17 17:13:47.366] [INFO] [线程ID: 0x700003b18000] [operator()] CalFIFOfuture Thread 123145364275200 finished.

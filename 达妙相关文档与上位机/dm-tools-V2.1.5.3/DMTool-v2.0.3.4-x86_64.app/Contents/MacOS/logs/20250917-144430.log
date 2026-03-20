@@ -1,0 +1,17 @@
+[2025-09-17 14:44:30.481] [INFO] [线程ID: 0x10ed55600] [Logger::init] 日志系统初始化完成
+[2025-09-17 14:44:30.481] [INFO] [线程ID: 0x10ed55600] [Logger::init] 日志文件路径: /Users/mac/code/serial-port-assistant/build/Qt_6_5_10_for_macOS-Release/DMTool-v2.0.3.4-x86_64.app/Contents/MacOS/logs/20250917-144430.log
+[2025-09-17 14:44:30.672] [ERROR] [线程ID: 0x10ed55600] [DMChat] 错误: 无法启动Python进程!
+[2025-09-17 14:44:30.672] [ERROR] [线程ID: 0x10ed55600] [DMChat] 错误信息: execvp: No such file or directory
+[2025-09-17 14:44:30.679] [INFO] [线程ID: 0x7000034e6000] [run] can解析线程启动
+[2025-09-17 14:44:30.679] [INFO] [线程ID: 0x70000366f000] [run] TX接收线程启动
+[2025-09-17 14:44:30.679] [INFO] [线程ID: 0x7000036f2000] [operator()] handleFIFO Background task started. Thread ID: 123145359925248
+[2025-09-17 14:44:30.679] [INFO] [线程ID: 0x700003775000] [operator()] handleCANAnalysis Background task started. Thread ID: 123145360461824
+[2025-09-17 14:44:30.679] [INFO] [线程ID: 0x7000037f8000] [operator()] CalFIFOfuture Background task started. Thread ID: 123145360998400
+[2025-09-17 14:44:30.679] [INFO] [线程ID: 0x700003569000] [run] RX接收线程启动
+[2025-09-17 14:45:06.235] [INFO] [线程ID: 0x10ed55600] [~MainWindow] RX接收线程已经终止
+[2025-09-17 14:45:06.245] [INFO] [线程ID: 0x10ed55600] [~MainWindow] TX接收线程已经终止
+[2025-09-17 14:45:06.251] [INFO] [线程ID: 0x10ed55600] [~MainWindow] CAN解析线程已经终止
+[2025-09-17 14:45:06.252] [INFO] [线程ID: 0x7000036f2000] [operator()] handleFIFO Thread 123145359925248 finished.
+[2025-09-17 14:45:06.332] [INFO] [线程ID: 0x700003775000] [operator()] handleCANAnalysis Thread 123145360461824 finished.
+[2025-09-17 14:45:06.333] [INFO] [线程ID: 0x10ed55600] [~CustomCDC] tx线程已经终止
+[2025-09-17 14:45:06.335] [INFO] [线程ID: 0x7000037f8000] [operator()] CalFIFOfuture Thread 123145360998400 finished.
