@@ -223,12 +223,13 @@ void motor_LZ_Data_send(Class_Motor_LZ *__motor_lz,Struct_send_motor_Lz data){
  * @brief 灵足电机的初始化
  * @param hfdcan can的指针
  * @param __motor_lz 电机的类指针
+ * @param __model 电机型号
  * @param id 电机CAN_id
  * @param *data 电机接收数据指针(外部定义方便计算)
  * @return void
  */
-void motor_LZ_Init(FDCAN_HandleTypeDef *hfdcan,Class_Motor_LZ *__motor_lz,uint8_t id,Struct_recv_motor_Lz *data){
-    __motor_lz->Init(hfdcan,id,MOTOR_LZ_02,Motor_LZ_Pos_control);
+void motor_LZ_Init(FDCAN_HandleTypeDef *hfdcan,Class_Motor_LZ *__motor_lz,const motor_LZ_Model __model,uint8_t id,Struct_recv_motor_Lz *data){
+    __motor_lz->Init(hfdcan,id,__model,Motor_LZ_Pos_control);
     HAL_Delay(10);
     while(__motor_lz->Get_Now_Angle() ==0){
         __motor_lz->enable();
@@ -269,14 +270,15 @@ void motor_DJ_Data_recv(Class_Motor_DJ *__motor_dj,Struct_recv_motor_DJ *data){
  * @brief 大疆电机的初始化
  * @param hfdcan can的指针
  * @param __motor_dj 电机的类指针
+ * @param __model 电机型号
  * @param id 电机CAN_id
  * @param *data 电机接收数据指针(外部定义方便计算)
  * @return void
  */
-void motor_DJ_Init(FDCAN_HandleTypeDef *hfdcan,Class_Motor_DJ *__motor_dj,uint8_t id,Struct_recv_motor_DJ *data){
+void motor_DJ_Init(FDCAN_HandleTypeDef *hfdcan,Class_Motor_DJ *__motor_dj,const motor_DJ_Model __model,uint8_t id,Struct_recv_motor_DJ *data){
     __motor_dj->PID_speed.Init(0.015f,0.0005f,0.0f,0.0f,10000.0f,10000.0f);
     __motor_dj->PID_Angle.Init(1.0f,0.0f,0.02f,0.0f,10000.0f,10000.0f);
-    __motor_dj->Init(hfdcan,id,MOTOR_DJ_M3508,motor_DJ_speed);
+    __motor_dj->Init(hfdcan,id,__model,motor_DJ_speed);
     HAL_Delay(10);
     while(__motor_dj->Get_Now_pos() ==0){
         HAL_Delay(10);
@@ -374,12 +376,13 @@ void motor_DM_Data_send(Class_Motor_DM *__motor_DM,Struct_send_motor_DM data){
  * @brief 达妙电机的初始化
  * @param hfdcan can的指针
  * @param __motor_DM 电机的类指针
+ * @param __model 电机型号
  * @param id 电机CAN_id
  * @param *data 电机接收数据指针(外部定义方便计算)
  * @return void
  */
-void motor_DM_Init(FDCAN_HandleTypeDef *hfdcan,Class_Motor_DM *__motor_DM,uint8_t id,Struct_recv_motor_DM *data){
-    __motor_DM->Init(hfdcan,id,MOTOR_DM_J10010L,Motor_DM_Pos_control);
+void motor_DM_Init(FDCAN_HandleTypeDef *hfdcan,Class_Motor_DM *__motor_DM,const motor_DM_Model __model,uint8_t id,Struct_recv_motor_DM *data){
+    __motor_DM->Init(hfdcan,id,__model,Motor_DM_Pos_control);
     HAL_Delay(10);
     
     while(__motor_DM->Get_Now_Pos() ==0){
@@ -401,15 +404,15 @@ void motor_task_init(){
 
     //灵足电机的初始化
     bsp_can_init(&hfdcan1,CAN1_Callback);//CAN1回调函数的初始化
-    motor_LZ_Init(&hfdcan1,&motor_lz,1,&motor_lz_data.recv);
+    motor_LZ_Init(&hfdcan1,&motor_lz,MOTOR_LZ_02,1,&motor_lz_data.recv);
     
     //大疆电机的初始化
     bsp_can_init(&hfdcan3,CAN3_Callback);//CAN2回调函数的初始化
-    motor_DJ_Init(&hfdcan3,&motor_DJ,1,&motor_dj_data.recv);
+    motor_DJ_Init(&hfdcan3,&motor_DJ,MOTOR_DJ_M3508,1,&motor_dj_data.recv);
 
     //达妙电机的初始化
     bsp_can_init(&hfdcan2,CAN2_Callback);//CAN3回调函数的初始化
-    motor_DM_Init(&hfdcan2,&motor_dm,1,&motor_dm_data.recv);
+    motor_DM_Init(&hfdcan2,&motor_dm,MOTOR_DM_J10010L,1,&motor_dm_data.recv);
     
     //宇树电机初始化
     USART_RX485_init(&huart2,USART2_RxHandler);//串口2回调函数的初始化

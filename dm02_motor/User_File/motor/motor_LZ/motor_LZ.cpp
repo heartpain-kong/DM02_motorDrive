@@ -119,7 +119,7 @@ void Class_Motor_LZ::motor_set_CAN_ID(uint8_t set_id){
  */
 void Class_Motor_LZ::can_recv(uint32_t Data , uint8_t *data){
     recv.Now_Pos = uint_to_float((data[0]<<8|data[1]),-Pos_Max,Pos_Max,16);
-    recv.Now_Angle = recv.Now_Pos * MATH_RPM_TO_RADPS;
+    recv.Now_Angle = recv.Now_Pos / MATH_RPM_TO_RADPS;
     recv.Now_W =  uint_to_float((data[2]<<8|data[3]),-W_Max,W_Max,16);
     recv.Now_T =  uint_to_float((data[4]<<8|data[5]),-T_Max,T_Max,16);
     recv.MError= Data>>16&0x3F;

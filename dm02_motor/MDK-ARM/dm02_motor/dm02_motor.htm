@@ -3,7 +3,7 @@
 <title>Static Call Graph - [dm02_motor\dm02_motor.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image dm02_motor\dm02_motor.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6230001: Last Updated: Fri Mar 20 11:33:07 2026
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6230001: Last Updated: Sun Mar 22 01:40:26 2026
 <BR><P>
 <H3>Maximum Stack Usage =        648 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -1113,10 +1113,10 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[156]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_SetCurrentMode
 <LI><a href="#[27f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;motor_task
-<LI><a href="#[21e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;motor_DM_Init(FDCAN_HandleTypeDef*, Class_Motor_DM*, unsigned char, Struct_recv_motor_DM*)
+<LI><a href="#[21e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;motor_DM_Init(FDCAN_HandleTypeDef*, Class_Motor_DM*, motor_DM_Model, unsigned char, Struct_recv_motor_DM*)
 <LI><a href="#[229]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;motor_YS_Init(__UART_HandleTypeDef*, Class_Motor_YS*, unsigned char, Struct_recv_motor_YS*)
-<LI><a href="#[21a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;motor_DJ_Init(FDCAN_HandleTypeDef*, Class_Motor_DJ*, unsigned char, Struct_recv_motor_DJ*)
-<LI><a href="#[223]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;motor_LZ_Init(FDCAN_HandleTypeDef*, Class_Motor_LZ*, unsigned char, Struct_recv_motor_Lz*)
+<LI><a href="#[21a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;motor_DJ_Init(FDCAN_HandleTypeDef*, Class_Motor_DJ*, motor_DJ_Model, unsigned char, Struct_recv_motor_DJ*)
+<LI><a href="#[223]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;motor_LZ_Init(FDCAN_HandleTypeDef*, Class_Motor_LZ*, motor_LZ_Model, unsigned char, Struct_recv_motor_Lz*)
 </UL>
 
 <P><STRONG><a name="[213]"></a>HAL_FDCAN_ActivateNotification</STRONG> (Thumb, 254 bytes, Stack size 20 bytes, stm32h7xx_hal_fdcan.o(.text.HAL_FDCAN_ActivateNotification))
@@ -3413,8 +3413,8 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> motor_task.o(.text.motor_task_init)
 </UL>
-<P><STRONG><a name="[21a]"></a>motor_DJ_Init(FDCAN_HandleTypeDef*, Class_Motor_DJ*, unsigned char, Struct_recv_motor_DJ*)</STRONG> (Thumb, 196 bytes, Stack size 72 bytes, motor_task.o(.text._Z13motor_DJ_InitP19FDCAN_HandleTypeDefP14Class_Motor_DJhP20Struct_recv_motor_DJ))
-<BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = motor_DJ_Init(FDCAN_HandleTypeDef*, Class_Motor_DJ*, unsigned char, Struct_recv_motor_DJ*) &rArr; HAL_Delay
+<P><STRONG><a name="[21a]"></a>motor_DJ_Init(FDCAN_HandleTypeDef*, Class_Motor_DJ*, motor_DJ_Model, unsigned char, Struct_recv_motor_DJ*)</STRONG> (Thumb, 208 bytes, Stack size 72 bytes, motor_task.o(.text._Z13motor_DJ_InitP19FDCAN_HandleTypeDefP14Class_Motor_DJ14motor_DJ_ModelhP20Struct_recv_motor_DJ))
+<BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = motor_DJ_Init(FDCAN_HandleTypeDef*, Class_Motor_DJ*, motor_DJ_Model, unsigned char, Struct_recv_motor_DJ*) &rArr; HAL_Delay
 </UL>
 <BR>[Calls]<UL><LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
 <LI><a href="#[21d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Class_Motor_DJ::Get_Now_pos() const
@@ -3425,8 +3425,8 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[27e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;motor_task_init
 </UL>
 
-<P><STRONG><a name="[21e]"></a>motor_DM_Init(FDCAN_HandleTypeDef*, Class_Motor_DM*, unsigned char, Struct_recv_motor_DM*)</STRONG> (Thumb, 142 bytes, Stack size 40 bytes, motor_task.o(.text._Z13motor_DM_InitP19FDCAN_HandleTypeDefP14Class_Motor_DMhP20Struct_recv_motor_DM))
-<BR><BR>[Stack]<UL><LI>Max Depth = 216<LI>Call Chain = motor_DM_Init(FDCAN_HandleTypeDef*, Class_Motor_DM*, unsigned char, Struct_recv_motor_DM*) &rArr; Class_Motor_DM::Init(FDCAN_HandleTypeDef*, unsigned short, motor_DM_Model const&, Enum_Motor_DM_Mode const&) &rArr; Class_Motor_DM::enable() &rArr; fdcan_send_data_stand(FDCAN_HandleTypeDef*, unsigned int, unsigned char*, unsigned int) &rArr; HAL_FDCAN_AddMessageToTxFifoQ &rArr; FDCAN_CopyMessageToRAM
+<P><STRONG><a name="[21e]"></a>motor_DM_Init(FDCAN_HandleTypeDef*, Class_Motor_DM*, motor_DM_Model, unsigned char, Struct_recv_motor_DM*)</STRONG> (Thumb, 144 bytes, Stack size 32 bytes, motor_task.o(.text._Z13motor_DM_InitP19FDCAN_HandleTypeDefP14Class_Motor_DM14motor_DM_ModelhP20Struct_recv_motor_DM))
+<BR><BR>[Stack]<UL><LI>Max Depth = 208<LI>Call Chain = motor_DM_Init(FDCAN_HandleTypeDef*, Class_Motor_DM*, motor_DM_Model, unsigned char, Struct_recv_motor_DM*) &rArr; Class_Motor_DM::Init(FDCAN_HandleTypeDef*, unsigned short, motor_DM_Model const&, Enum_Motor_DM_Mode const&) &rArr; Class_Motor_DM::enable() &rArr; fdcan_send_data_stand(FDCAN_HandleTypeDef*, unsigned int, unsigned char*, unsigned int) &rArr; HAL_FDCAN_AddMessageToTxFifoQ &rArr; FDCAN_CopyMessageToRAM
 </UL>
 <BR>[Calls]<UL><LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
 <LI><a href="#[220]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Class_Motor_DM::Get_Now_Pos() const
@@ -3438,8 +3438,8 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[27e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;motor_task_init
 </UL>
 
-<P><STRONG><a name="[223]"></a>motor_LZ_Init(FDCAN_HandleTypeDef*, Class_Motor_LZ*, unsigned char, Struct_recv_motor_Lz*)</STRONG> (Thumb, 130 bytes, Stack size 40 bytes, motor_task.o(.text._Z13motor_LZ_InitP19FDCAN_HandleTypeDefP14Class_Motor_LZhP20Struct_recv_motor_Lz))
-<BR><BR>[Stack]<UL><LI>Max Depth = 192<LI>Call Chain = motor_LZ_Init(FDCAN_HandleTypeDef*, Class_Motor_LZ*, unsigned char, Struct_recv_motor_Lz*) &rArr; Class_Motor_LZ::active_recv(unsigned char) &rArr; fdcan_send_data_Exten(FDCAN_HandleTypeDef*, unsigned int, unsigned char*, unsigned int) &rArr; HAL_FDCAN_AddMessageToTxFifoQ &rArr; FDCAN_CopyMessageToRAM
+<P><STRONG><a name="[223]"></a>motor_LZ_Init(FDCAN_HandleTypeDef*, Class_Motor_LZ*, motor_LZ_Model, unsigned char, Struct_recv_motor_Lz*)</STRONG> (Thumb, 128 bytes, Stack size 32 bytes, motor_task.o(.text._Z13motor_LZ_InitP19FDCAN_HandleTypeDefP14Class_Motor_LZ14motor_LZ_ModelhP20Struct_recv_motor_Lz))
+<BR><BR>[Stack]<UL><LI>Max Depth = 184<LI>Call Chain = motor_LZ_Init(FDCAN_HandleTypeDef*, Class_Motor_LZ*, motor_LZ_Model, unsigned char, Struct_recv_motor_Lz*) &rArr; Class_Motor_LZ::active_recv(unsigned char) &rArr; fdcan_send_data_Exten(FDCAN_HandleTypeDef*, unsigned int, unsigned char*, unsigned int) &rArr; HAL_FDCAN_AddMessageToTxFifoQ &rArr; FDCAN_CopyMessageToRAM
 </UL>
 <BR>[Calls]<UL><LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
 <LI><a href="#[228]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Class_Motor_LZ::Set_Status(Enum_Motor_LZ_Status const&)
@@ -3553,7 +3553,7 @@ Global Symbols
 <LI><a href="#[23c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Class_Motor_DJ::Get_Now_T() const
 <LI><a href="#[21d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Class_Motor_DJ::Get_Now_pos() const
 </UL>
-<BR>[Called By]<UL><LI><a href="#[21a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;motor_DJ_Init(FDCAN_HandleTypeDef*, Class_Motor_DJ*, unsigned char, Struct_recv_motor_DJ*)
+<BR>[Called By]<UL><LI><a href="#[21a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;motor_DJ_Init(FDCAN_HandleTypeDef*, Class_Motor_DJ*, motor_DJ_Model, unsigned char, Struct_recv_motor_DJ*)
 <LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN3_Callback(FDCAN_RxHeaderTypeDef&, unsigned char*)
 </UL>
 
@@ -3579,7 +3579,7 @@ Global Symbols
 <LI><a href="#[243]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Class_Motor_DM::Get_mode() const
 <LI><a href="#[242]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Class_Motor_DM::Get_MError() const
 </UL>
-<BR>[Called By]<UL><LI><a href="#[21e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;motor_DM_Init(FDCAN_HandleTypeDef*, Class_Motor_DM*, unsigned char, Struct_recv_motor_DM*)
+<BR>[Called By]<UL><LI><a href="#[21e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;motor_DM_Init(FDCAN_HandleTypeDef*, Class_Motor_DM*, motor_DM_Model, unsigned char, Struct_recv_motor_DM*)
 <LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN2_Callback(FDCAN_RxHeaderTypeDef&, unsigned char*)
 </UL>
 
@@ -3607,7 +3607,7 @@ Global Symbols
 <LI><a href="#[24f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Class_Motor_LZ::Get_mode() const
 <LI><a href="#[24e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Class_Motor_LZ::Get_MError() const
 </UL>
-<BR>[Called By]<UL><LI><a href="#[223]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;motor_LZ_Init(FDCAN_HandleTypeDef*, Class_Motor_LZ*, unsigned char, Struct_recv_motor_Lz*)
+<BR>[Called By]<UL><LI><a href="#[223]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;motor_LZ_Init(FDCAN_HandleTypeDef*, Class_Motor_LZ*, motor_LZ_Model, unsigned char, Struct_recv_motor_Lz*)
 <LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN1_Callback(FDCAN_RxHeaderTypeDef&, unsigned char*)
 </UL>
 
@@ -3700,7 +3700,7 @@ Global Symbols
 <P><STRONG><a name="[21c]"></a>Class_Motor_DJ::Init(FDCAN_HandleTypeDef*, unsigned short, motor_DJ_Model, motor_DJ_Control_mode const&)</STRONG> (Thumb, 352 bytes, Stack size 20 bytes, motor_dj.o(.text._ZN14Class_Motor_DJ4InitEP19FDCAN_HandleTypeDeft14motor_DJ_ModelRK21motor_DJ_Control_mode))
 <BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = Class_Motor_DJ::Init(FDCAN_HandleTypeDef*, unsigned short, motor_DJ_Model, motor_DJ_Control_mode const&)
 </UL>
-<BR>[Called By]<UL><LI><a href="#[21a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;motor_DJ_Init(FDCAN_HandleTypeDef*, Class_Motor_DJ*, unsigned char, Struct_recv_motor_DJ*)
+<BR>[Called By]<UL><LI><a href="#[21a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;motor_DJ_Init(FDCAN_HandleTypeDef*, Class_Motor_DJ*, motor_DJ_Model, unsigned char, Struct_recv_motor_DJ*)
 </UL>
 
 <P><STRONG><a name="[240]"></a>Class_Motor_DJ::Set_T(float const&)</STRONG> (Thumb, 20 bytes, Stack size 8 bytes, motor_task.o(.text._ZN14Class_Motor_DJ5Set_TERKf))
@@ -3740,7 +3740,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[221]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Class_Motor_DM::enable()
 </UL>
-<BR>[Called By]<UL><LI><a href="#[21e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;motor_DM_Init(FDCAN_HandleTypeDef*, Class_Motor_DM*, unsigned char, Struct_recv_motor_DM*)
+<BR>[Called By]<UL><LI><a href="#[21e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;motor_DM_Init(FDCAN_HandleTypeDef*, Class_Motor_DM*, motor_DM_Model, unsigned char, Struct_recv_motor_DM*)
 </UL>
 
 <P><STRONG><a name="[24a]"></a>Class_Motor_DM::Set_T(float const&)</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, motor_task.o(.text._ZN14Class_Motor_DM5Set_TERKf))
@@ -3772,7 +3772,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[23a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fdcan_send_data_stand(FDCAN_HandleTypeDef*, unsigned int, unsigned char*, unsigned int)
 </UL>
-<BR>[Called By]<UL><LI><a href="#[21e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;motor_DM_Init(FDCAN_HandleTypeDef*, Class_Motor_DM*, unsigned char, Struct_recv_motor_DM*)
+<BR>[Called By]<UL><LI><a href="#[21e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;motor_DM_Init(FDCAN_HandleTypeDef*, Class_Motor_DM*, motor_DM_Model, unsigned char, Struct_recv_motor_DM*)
 <LI><a href="#[21f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Class_Motor_DM::Init(FDCAN_HandleTypeDef*, unsigned short, motor_DM_Model const&, Enum_Motor_DM_Mode const&)
 </UL>
 
@@ -3790,7 +3790,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN2_Callback(FDCAN_RxHeaderTypeDef&, unsigned char*)
 </UL>
 
-<P><STRONG><a name="[233]"></a>Class_Motor_DM::can_send()</STRONG> (Thumb, 268 bytes, Stack size 32 bytes, motor_dm.o(.text._ZN14Class_Motor_DM8can_sendEv))
+<P><STRONG><a name="[233]"></a>Class_Motor_DM::can_send()</STRONG> (Thumb, 276 bytes, Stack size 32 bytes, motor_dm.o(.text._ZN14Class_Motor_DM8can_sendEv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 160<LI>Call Chain = Class_Motor_DM::can_send() &rArr; fdcan_send_data_stand(FDCAN_HandleTypeDef*, unsigned int, unsigned char*, unsigned int) &rArr; HAL_FDCAN_AddMessageToTxFifoQ &rArr; FDCAN_CopyMessageToRAM
 </UL>
 <BR>[Calls]<UL><LI><a href="#[23a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fdcan_send_data_stand(FDCAN_HandleTypeDef*, unsigned int, unsigned char*, unsigned int)
@@ -3814,7 +3814,7 @@ Global Symbols
 <P><STRONG><a name="[228]"></a>Class_Motor_LZ::Set_Status(Enum_Motor_LZ_Status const&)</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, motor_task.o(.text._ZN14Class_Motor_LZ10Set_StatusERK20Enum_Motor_LZ_Status))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = Class_Motor_LZ::Set_Status(Enum_Motor_LZ_Status const&)
 </UL>
-<BR>[Called By]<UL><LI><a href="#[223]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;motor_LZ_Init(FDCAN_HandleTypeDef*, Class_Motor_LZ*, unsigned char, Struct_recv_motor_Lz*)
+<BR>[Called By]<UL><LI><a href="#[223]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;motor_LZ_Init(FDCAN_HandleTypeDef*, Class_Motor_LZ*, motor_LZ_Model, unsigned char, Struct_recv_motor_Lz*)
 </UL>
 
 <P><STRONG><a name="[227]"></a>Class_Motor_LZ::active_recv(unsigned char)</STRONG> (Thumb, 68 bytes, Stack size 24 bytes, motor_lz.o(.text._ZN14Class_Motor_LZ11active_recvEh))
@@ -3823,13 +3823,13 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[277]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Class_Motor_LZ::send_data(unsigned int)
 <LI><a href="#[268]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fdcan_send_data_Exten(FDCAN_HandleTypeDef*, unsigned int, unsigned char*, unsigned int)
 </UL>
-<BR>[Called By]<UL><LI><a href="#[223]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;motor_LZ_Init(FDCAN_HandleTypeDef*, Class_Motor_LZ*, unsigned char, Struct_recv_motor_Lz*)
+<BR>[Called By]<UL><LI><a href="#[223]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;motor_LZ_Init(FDCAN_HandleTypeDef*, Class_Motor_LZ*, motor_LZ_Model, unsigned char, Struct_recv_motor_Lz*)
 </UL>
 
 <P><STRONG><a name="[224]"></a>Class_Motor_LZ::Init(FDCAN_HandleTypeDef*, unsigned short, motor_LZ_Model const&, Enum_Motor_LZ_Mode const&)</STRONG> (Thumb, 128 bytes, Stack size 24 bytes, motor_lz.o(.text._ZN14Class_Motor_LZ4InitEP19FDCAN_HandleTypeDeftRK14motor_LZ_ModelRK18Enum_Motor_LZ_Mode))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = Class_Motor_LZ::Init(FDCAN_HandleTypeDef*, unsigned short, motor_LZ_Model const&, Enum_Motor_LZ_Mode const&)
 </UL>
-<BR>[Called By]<UL><LI><a href="#[223]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;motor_LZ_Init(FDCAN_HandleTypeDef*, Class_Motor_LZ*, unsigned char, Struct_recv_motor_Lz*)
+<BR>[Called By]<UL><LI><a href="#[223]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;motor_LZ_Init(FDCAN_HandleTypeDef*, Class_Motor_LZ*, motor_LZ_Model, unsigned char, Struct_recv_motor_Lz*)
 </UL>
 
 <P><STRONG><a name="[257]"></a>Class_Motor_LZ::Set_T(float const&)</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, motor_task.o(.text._ZN14Class_Motor_LZ5Set_TERKf))
@@ -3862,7 +3862,7 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[277]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Class_Motor_LZ::send_data(unsigned int)
 <LI><a href="#[268]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fdcan_send_data_Exten(FDCAN_HandleTypeDef*, unsigned int, unsigned char*, unsigned int)
 </UL>
-<BR>[Called By]<UL><LI><a href="#[223]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;motor_LZ_Init(FDCAN_HandleTypeDef*, Class_Motor_LZ*, unsigned char, Struct_recv_motor_Lz*)
+<BR>[Called By]<UL><LI><a href="#[223]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;motor_LZ_Init(FDCAN_HandleTypeDef*, Class_Motor_LZ*, motor_LZ_Model, unsigned char, Struct_recv_motor_Lz*)
 </UL>
 
 <P><STRONG><a name="[256]"></a>Class_Motor_LZ::Set_Pos(float const&)</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, motor_task.o(.text._ZN14Class_Motor_LZ7Set_PosERKf))
@@ -4013,7 +4013,7 @@ Global Symbols
 <P><STRONG><a name="[21b]"></a>Class_PID::Init(float const&, float const&, float const&, float const&, float, float)</STRONG> (Thumb, 82 bytes, Stack size 24 bytes, alg_pid.o(.text._ZN9Class_PID4InitERKfS1_S1_S1_ff))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = Class_PID::Init(float const&, float const&, float const&, float const&, float, float)
 </UL>
-<BR>[Called By]<UL><LI><a href="#[21a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;motor_DJ_Init(FDCAN_HandleTypeDef*, Class_Motor_DJ*, unsigned char, Struct_recv_motor_DJ*)
+<BR>[Called By]<UL><LI><a href="#[21a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;motor_DJ_Init(FDCAN_HandleTypeDef*, Class_Motor_DJ*, motor_DJ_Model, unsigned char, Struct_recv_motor_DJ*)
 </UL>
 
 <P><STRONG><a name="[26e]"></a>Class_PID::Set_Now(float const&)</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, motor_dj.o(.text._ZN9Class_PID7Set_NowERKf))
@@ -4031,7 +4031,7 @@ Global Symbols
 <P><STRONG><a name="[21d]"></a>Class_Motor_DJ::Get_Now_pos() const</STRONG> (Thumb, 14 bytes, Stack size 4 bytes, motor_task.o(.text._ZNK14Class_Motor_DJ11Get_Now_posEv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = Class_Motor_DJ::Get_Now_pos() const
 </UL>
-<BR>[Called By]<UL><LI><a href="#[21a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;motor_DJ_Init(FDCAN_HandleTypeDef*, Class_Motor_DJ*, unsigned char, Struct_recv_motor_DJ*)
+<BR>[Called By]<UL><LI><a href="#[21a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;motor_DJ_Init(FDCAN_HandleTypeDef*, Class_Motor_DJ*, motor_DJ_Model, unsigned char, Struct_recv_motor_DJ*)
 <LI><a href="#[219]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;motor_DJ_Data_recv(Class_Motor_DJ*, Struct_recv_motor_DJ*)
 </UL>
 
@@ -4056,14 +4056,14 @@ Global Symbols
 <P><STRONG><a name="[220]"></a>Class_Motor_DM::Get_Now_Pos() const</STRONG> (Thumb, 14 bytes, Stack size 4 bytes, motor_task.o(.text._ZNK14Class_Motor_DM11Get_Now_PosEv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = Class_Motor_DM::Get_Now_Pos() const
 </UL>
-<BR>[Called By]<UL><LI><a href="#[21e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;motor_DM_Init(FDCAN_HandleTypeDef*, Class_Motor_DM*, unsigned char, Struct_recv_motor_DM*)
+<BR>[Called By]<UL><LI><a href="#[21e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;motor_DM_Init(FDCAN_HandleTypeDef*, Class_Motor_DM*, motor_DM_Model, unsigned char, Struct_recv_motor_DM*)
 <LI><a href="#[217]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;motor_DM_Data_recv(Class_Motor_DM*, Struct_recv_motor_DM*)
 </UL>
 
 <P><STRONG><a name="[222]"></a>Class_Motor_DM::Get_Now_Angle() const</STRONG> (Thumb, 14 bytes, Stack size 4 bytes, motor_task.o(.text._ZNK14Class_Motor_DM13Get_Now_AngleEv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = Class_Motor_DM::Get_Now_Angle() const
 </UL>
-<BR>[Called By]<UL><LI><a href="#[21e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;motor_DM_Init(FDCAN_HandleTypeDef*, Class_Motor_DM*, unsigned char, Struct_recv_motor_DM*)
+<BR>[Called By]<UL><LI><a href="#[21e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;motor_DM_Init(FDCAN_HandleTypeDef*, Class_Motor_DM*, motor_DM_Model, unsigned char, Struct_recv_motor_DM*)
 <LI><a href="#[217]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;motor_DM_Data_recv(Class_Motor_DM*, Struct_recv_motor_DM*)
 </UL>
 
@@ -4112,7 +4112,7 @@ Global Symbols
 <P><STRONG><a name="[225]"></a>Class_Motor_LZ::Get_Now_Angle() const</STRONG> (Thumb, 14 bytes, Stack size 4 bytes, motor_task.o(.text._ZNK14Class_Motor_LZ13Get_Now_AngleEv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = Class_Motor_LZ::Get_Now_Angle() const
 </UL>
-<BR>[Called By]<UL><LI><a href="#[223]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;motor_LZ_Init(FDCAN_HandleTypeDef*, Class_Motor_LZ*, unsigned char, Struct_recv_motor_Lz*)
+<BR>[Called By]<UL><LI><a href="#[223]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;motor_LZ_Init(FDCAN_HandleTypeDef*, Class_Motor_LZ*, motor_LZ_Model, unsigned char, Struct_recv_motor_Lz*)
 <LI><a href="#[215]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;motor_LZ_Data_recv(Class_Motor_LZ*, Struct_recv_motor_Lz*)
 </UL>
 
@@ -4242,15 +4242,15 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[27e]"></a>motor_task_init</STRONG> (Thumb, 234 bytes, Stack size 32 bytes, motor_task.o(.text.motor_task_init))
+<P><STRONG><a name="[27e]"></a>motor_task_init</STRONG> (Thumb, 246 bytes, Stack size 32 bytes, motor_task.o(.text.motor_task_init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 624 + Unknown Stack Size
 <LI>Call Chain = motor_task_init &rArr; USART_RX485_init(__UART_HandleTypeDef*, void (*)(__UART_HandleTypeDef*, unsigned char*)) &rArr; HAL_RS485Ex_Init &rArr; HAL_UART_MspInit &rArr; HAL_RCCEx_PeriphCLKConfig &rArr; RCCEx_PLL3_Config
 </UL>
 <BR>[Calls]<UL><LI><a href="#[280]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_Start_IT
-<LI><a href="#[21e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;motor_DM_Init(FDCAN_HandleTypeDef*, Class_Motor_DM*, unsigned char, Struct_recv_motor_DM*)
+<LI><a href="#[21e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;motor_DM_Init(FDCAN_HandleTypeDef*, Class_Motor_DM*, motor_DM_Model, unsigned char, Struct_recv_motor_DM*)
 <LI><a href="#[229]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;motor_YS_Init(__UART_HandleTypeDef*, Class_Motor_YS*, unsigned char, Struct_recv_motor_YS*)
-<LI><a href="#[21a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;motor_DJ_Init(FDCAN_HandleTypeDef*, Class_Motor_DJ*, unsigned char, Struct_recv_motor_DJ*)
-<LI><a href="#[223]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;motor_LZ_Init(FDCAN_HandleTypeDef*, Class_Motor_LZ*, unsigned char, Struct_recv_motor_Lz*)
+<LI><a href="#[21a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;motor_DJ_Init(FDCAN_HandleTypeDef*, Class_Motor_DJ*, motor_DJ_Model, unsigned char, Struct_recv_motor_DJ*)
+<LI><a href="#[223]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;motor_LZ_Init(FDCAN_HandleTypeDef*, Class_Motor_LZ*, motor_LZ_Model, unsigned char, Struct_recv_motor_Lz*)
 <LI><a href="#[238]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_RX485_init(__UART_HandleTypeDef*, void (*)(__UART_HandleTypeDef*, unsigned char*))
 <LI><a href="#[210]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bsp_can_init(FDCAN_HandleTypeDef*, void (*)(FDCAN_RxHeaderTypeDef&, unsigned char*))
 </UL>

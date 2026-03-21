@@ -129,7 +129,7 @@ void Class_Motor_YS::UART_recv(uint8_t *data){
                     motor_YS_recv_Temp_buffer[8]<<8 | motor_YS_recv_Temp_buffer[7];
     recv.Now_Pos=YS_Angle_Pos;
 	recv.Now_Pos= (recv.Now_Pos * 6.28319 )/(32768*6.33);
-    recv.Now_Angle = recv.Now_Pos*MATH_RPM_TO_RADPS;
+    recv.Now_Angle = recv.Now_Pos/MATH_RPM_TO_RADPS;
     int8_t Temp = motor_YS_recv_Temp_buffer[11] & 0xFF;
     recv.Now_Temperature = Temp;
     recv.MError = motor_YS_recv_Temp_buffer[12] & 0x7;

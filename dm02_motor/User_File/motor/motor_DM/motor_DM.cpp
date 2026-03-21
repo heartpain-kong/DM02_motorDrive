@@ -87,10 +87,10 @@ void Class_Motor_DM::can_send(){
     motor_send_DM_Data[0]=motor[0]>>8;
 	motor_send_DM_Data[1]=motor[0];
 	motor_send_DM_Data[2]=motor[1]>>4;
-	motor_send_DM_Data[3]=(motor[1]&0xF)<<4|(motor[3]>>8);
+	motor_send_DM_Data[3]=(motor[1]&0xF)<<4|(motor[3]>>8&0x0F);
 	motor_send_DM_Data[4]=motor[3];
 	motor_send_DM_Data[5]=motor[4]>>4;
-	motor_send_DM_Data[6]=(motor[4]&0xF)<<4|(motor[2]>>8);
+	motor_send_DM_Data[6]=(motor[4]&0xF)<<4|(motor[2]>>8&0x0F);
 	motor_send_DM_Data[7]=motor[2];
 
     fdcan_send_data_stand(FDcan,CAN_id,motor_send_DM_Data,8);
@@ -111,6 +111,6 @@ void Class_Motor_DM::can_recv(uint8_t *data){
 	recv.Now_W  = uint_to_float((data[3]<<4|data[4]>>4),-W_Max,W_Max,12);
 	recv.Now_T  =uint_to_float((data[4]&0x0F)<<8|data[5],-T_Max,T_Max,12);
 
-    recv.Now_Angle = recv.Now_Pos*MATH_RPM_TO_RADPS;
+    recv.Now_Angle = recv.Now_Pos/MATH_RPM_TO_RADPS;
     Motor_DM_Status = Motor_DM_Status_ENABLE;
 }
